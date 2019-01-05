@@ -1,0 +1,8 @@
+{
+  "name": "udemy-react-indecision-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ermondel/udemy-react-indecision-app.git",
+  "author": "ermondel",
+  "license": "MIT"
+}
