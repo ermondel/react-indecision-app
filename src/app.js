@@ -6,7 +6,7 @@ class IndecisionApp extends React.Component {
         this.handleAddOption     = this.handleAddOption.bind(this);
         this.handleDeleteOption  = this.handleDeleteOption.bind(this);
         this.state = {
-            options: props.options
+            options: []
         }
     }
 
@@ -78,9 +78,6 @@ class IndecisionApp extends React.Component {
             </div>
         );
     }
-}
-IndecisionApp.defaultProps = {
-    options: []
 }
 
 const Header = (props) => {
@@ -164,14 +161,5 @@ class AddOption extends React.Component {
         );
     }
 }
-
-// const User = (props) => {
-//     return (
-//         <div>
-//             <p>Name: { props.name }</p>
-//             <p>Age: { props.age }</p>
-//         </div>
-//     );
-// }
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
