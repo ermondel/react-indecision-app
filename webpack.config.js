@@ -18,11 +18,20 @@ module.exports = {
                     },
                 },
                 exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                    { loader: 'sass-loader' },
+                ]
             }
         ]
     },
     devtool: 'cheap-module-eval-source-map',
     devServer: {
         contentBase: path.join(__dirname, 'public')
-    }
+    },
+    mode: 'development'
 }
