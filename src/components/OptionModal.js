@@ -15,4 +15,6 @@ const OptionModal = (props) => (
     </Modal>
 );
 
+Modal.setAppElement('#app');
+
 export default OptionModal;
