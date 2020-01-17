@@ -1,11 +1,13 @@
-![React](https://github.com/ermondel/tsttmp/blob/master/files/icons48b/React48b.png)
-![Webpack](https://github.com/ermondel/tsttmp/blob/master/files/icons48b/Webpack48b.png)
+![React](https://github.com/ermondel/wiki/blob/master/files/icons48b/React48b.png)
+![Webpack](https://github.com/ermondel/wiki/blob/master/files/icons48b/Webpack48b.png)
 
 # React Indecision App
-*Project for Udemy ReactJS course.*  
+
+_Project for Udemy ReactJS course._
 
 #### Technologies
-| name |
-| --- |
+
+| name    |
+| ------- |
 | ReactJS |
 | Webpack |
