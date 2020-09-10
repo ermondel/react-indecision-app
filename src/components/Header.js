@@ -8,6 +8,7 @@ const Header = (props) => (
     </div>
   </div>
 );
+
 Header.defaultProps = {
   title: 'Indecision',
 };

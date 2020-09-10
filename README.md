@@ -13,3 +13,4 @@ A small application to help you make decisions. Project for Udemy ReactJS course
 ### Technologies
 
 - React
+- Sass
