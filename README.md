@@ -10,7 +10,10 @@ A small application to help you make decisions. Project for Udemy ReactJS course
 
 [Demo](https://ermondel.github.io/react-indecision-app)
 
+[![Task](https://github.com/ermondel/wiki/blob/master/screens/react-indecision-app.jpg)](https://ermondel.github.io/react-indecision-app)
+
 ### Technologies
 
 - React
 - Sass
+- React Modal
