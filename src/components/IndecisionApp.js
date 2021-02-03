@@ -9,6 +9,7 @@ class IndecisionApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined,
+    modalOpen: false,
   };
 
   componentDidMount() {
@@ -47,6 +48,7 @@ class IndecisionApp extends React.Component {
     const option = this.state.options[randomNum];
     this.setState((prevState) => ({
       selectedOption: option,
+      modalOpen: true,
     }));
   };
 
@@ -62,7 +64,7 @@ class IndecisionApp extends React.Component {
 
   handleClearSelectedOption = () => {
     this.setState(() => ({
-      selectedOption: undefined,
+      modalOpen: false,
     }));
   };
 
@@ -91,6 +93,7 @@ class IndecisionApp extends React.Component {
         </div>
 
         <OptionModal
+          isOpen={this.state.modalOpen}
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
         />
