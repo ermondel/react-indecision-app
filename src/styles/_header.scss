@@ -1,0 +1,23 @@
+.header {
+  background: #20222b;
+}
+
+.header__inner {
+  box-sizing: border-box;
+
+  max-width: 632px;
+  margin: 0 auto;
+  padding: 16px 16px;
+}
+
+.header__title {
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.header__subtitle {
+  color: #a5afd7;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+}

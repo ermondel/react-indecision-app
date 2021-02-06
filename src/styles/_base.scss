@@ -1,0 +1,54 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: white;
+  background-color: #333745;
+}
+
+h1,
+h2,
+h3,
+p,
+button,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+input {
+  background-color: white;
+  color: black;
+}
+
+@-moz-document url-prefix() {
+  body {
+    font-family: Arial, sans-serif;
+  }
+}

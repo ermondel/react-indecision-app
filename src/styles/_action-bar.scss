@@ -1,0 +1,19 @@
+.action-bar {
+  margin-bottom: 48px;
+}
+
+.main-action-btn {
+  width: 100%;
+  padding: 24px;
+
+  background-color: #8357c5;
+  border-bottom: 6px solid #693cad;
+
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+
+  &:focus {
+    outline: 1px solid white;
+  }
+}

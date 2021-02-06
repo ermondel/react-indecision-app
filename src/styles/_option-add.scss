@@ -1,0 +1,53 @@
+.option-add {
+  padding: 16px;
+}
+
+.option-add__form {
+  display: flex;
+}
+
+.option-add__input {
+  flex-grow: 1;
+
+  padding: 12px;
+  margin-right: 12px;
+
+  color: #a5afd7;
+  background-color: #333745;
+  border-bottom: 3px solid #1d2028;
+
+  &:focus {
+    outline: none;
+    border-bottom-color: white;
+  }
+}
+
+.option-add__submit-btn {
+  padding: 12px;
+
+  background-color: #8357c5;
+  border-bottom: 3px solid #693cad;
+
+  font-weight: 500;
+
+  &:focus {
+    outline: 1px solid white;
+  }
+}
+
+.option-list__message {
+  padding: 32px;
+
+  text-align: center;
+  line-height: 18px;
+
+  color: #a5afd7;
+  border-bottom: 1px solid #5c627b;
+}
+
+.option-add__message {
+  color: #a5afd7;
+  font-style: italic;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
