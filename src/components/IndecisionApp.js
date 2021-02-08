@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import AddForm from './AddForm';
 import ActionBtn from './ActionBtn';
 import OptionList from './OptionList';
 import OptionModal from './OptionModal';
@@ -78,24 +77,24 @@ class IndecisionApp extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header subtitle={this.subtitle} />
 
-        <main className='container'>
-          <ActionBtn
-            disabled={this.state.options.length <= 0}
-            onClick={this.showRandomOption}
-          />
-
-          <div className='widget'>
-            <OptionList
-              options={this.state.options}
-              removeItem={this.removeOption}
-              removeAll={this.removeAllOptions}
+        <main className='main'>
+          <div className='action-bar'>
+            <ActionBtn
+              disabled={this.state.options.length <= 0}
+              onClick={this.showRandomOption}
             />
-
-            <AddForm onSubmit={this.addOption} message={this.state.message} />
           </div>
+
+          <OptionList
+            options={this.state.options}
+            addItem={this.addOption}
+            removeItem={this.removeOption}
+            removeAll={this.removeAllOptions}
+            resultMessage={this.state.message}
+          />
         </main>
 
         <OptionModal
@@ -103,7 +102,7 @@ class IndecisionApp extends React.Component {
           isOpen={this.state.modalOpen}
           selectedOption={this.state.selectedOption}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }

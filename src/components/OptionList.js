@@ -1,24 +1,36 @@
 import React from 'react';
-import RemoveAllBtn from './RemoveAllBtn';
 import Option from './Option';
+import OptionAdd from './OptionAdd';
+import OptionsRemoveAll from './OptionsRemoveAll';
 
-const OptionList = ({ options, removeItem, removeAll }) => {
-  const list = options.map((option, index) => (
-    <Option key={option} value={option} num={index + 1} remove={removeItem} />
-  ));
+const OptionList = (props) => {
+  const displayList = props.options.length > 0;
+
+  const emptyListMessage = (
+    <p className='option-list__message'>Please add an option to get started!</p>
+  );
+
+  const list = props.options.map((option, index) => {
+    return (
+      <Option
+        key={option}
+        value={option}
+        num={index + 1}
+        remove={props.removeItem}
+      />
+    );
+  });
 
   return (
-    <div>
-      <div className='widget-header'>
-        <h3 className='widget-header__title'>Your Options</h3>
-
-        <RemoveAllBtn display={options.length > 0} onClick={removeAll} />
+    <div className='option-list'>
+      <div className='option-list__header'>
+        <h3 className='option-list__title'>Your Options</h3>
+        <OptionsRemoveAll display={displayList} onClick={props.removeAll} />
       </div>
-      {options.length > 0 ? (
-        list
-      ) : (
-        <p className='widget-message'>Please add an option to get started!</p>
-      )}
+
+      {displayList ? list : emptyListMessage}
+
+      <OptionAdd onSubmit={props.addItem} message={props.resultMessage} />
     </div>
   );
 };

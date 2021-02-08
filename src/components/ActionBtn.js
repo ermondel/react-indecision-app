@@ -1,11 +1,9 @@
 import React from 'react';
 
 const ActionBtn = ({ onClick, disabled }) => (
-  <div>
-    <button className='action-btn' onClick={onClick} disabled={disabled}>
-      What should I do?
-    </button>
-  </div>
+  <button className='main-action-btn' onClick={onClick} disabled={disabled}>
+    What should I do?
+  </button>
 );
 
 export default ActionBtn;

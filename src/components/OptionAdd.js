@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import FormMessage from './FormMessage';
+import OptionAddMessage from './OptionAddMessage';
 
-class AddForm extends Component {
+class OptionAdd extends Component {
   state = {
     value: '',
   };
@@ -19,22 +19,22 @@ class AddForm extends Component {
 
   render() {
     return (
-      <div>
-        <FormMessage text={this.props.message} />
+      <div className='option-add'>
+        <OptionAddMessage text={this.props.message} />
 
-        <form className='add-option' onSubmit={this.onSubmit}>
+        <form className='option-add__form' onSubmit={this.onSubmit}>
           <input
-            className='add-option__input'
+            className='option-add__input'
             type='text'
             value={this.state.value}
             onChange={this.onChange}
           />
 
-          <button className='button'>Add Option</button>
+          <button className='option-add__submit-btn'>Add Option</button>
         </form>
       </div>
     );
   }
 }
 
-export default AddForm;
+export default OptionAdd;
