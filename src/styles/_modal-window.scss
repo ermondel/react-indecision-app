@@ -1,0 +1,63 @@
+.modal {
+  box-sizing: border-box;
+
+  max-width: 320px;
+  padding: 20px;
+
+  background: #464b5e;
+  color: white;
+
+  text-align: center;
+  outline: none;
+}
+
+.modal__title {
+  font-size: 19px;
+  line-height: 21px;
+  font-weight: normal;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #5c627b;
+}
+
+.modal__body {
+  margin: 0 0 32px 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  word-break: break-all;
+}
+
+.modal__close-btn {
+  width: 100%;
+  padding: 12px 0;
+
+  background-color: #8357c5;
+  border-bottom: 3px solid #693cad;
+
+  font-weight: 500;
+  line-height: 18px;
+
+  &:focus {
+    outline: 1px solid white;
+  }
+}
+
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: opacity 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}

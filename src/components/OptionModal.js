@@ -11,7 +11,7 @@ const OptionModal = (props) => (
   >
     <h3 className='modal__title'>Selected Option</h3>
     <p className='modal__body'>{props.selectedOption}</p>
-    <button className='button' onClick={props.closeModal}>
+    <button className='modal__close-btn' onClick={props.closeModal}>
       Ok
     </button>
   </Modal>
