@@ -3,6 +3,13 @@ import Header from './Header';
 import ActionBtn from './ActionBtn';
 import OptionList from './OptionList';
 import OptionModal from './OptionModal';
+import {
+  randomOption,
+  addOption,
+  removeOption,
+  saveOptions,
+  readOptions,
+} from '../lib/optionList';
 
 class IndecisionApp extends React.Component {
   state = {
@@ -15,10 +22,10 @@ class IndecisionApp extends React.Component {
   subtitle = 'Put your life in the hands of a computer';
 
   showRandomOption = () => {
-    const randomNum = Math.floor(Math.random() * this.state.options.length);
-    const option = this.state.options[randomNum];
-
-    this.__setState({ selectedOption: option, modalOpen: true });
+    this.__setState({
+      selectedOption: randomOption(this.state.options),
+      modalOpen: true,
+    });
   };
 
   addOption = (option) => {
@@ -32,7 +39,9 @@ class IndecisionApp extends React.Component {
       return;
     }
 
-    this.__setState({ options: this.state.options.concat(option) });
+    this.__setState({
+      options: addOption(this.state.options, option),
+    });
   };
 
   closeModal = () => {
@@ -41,29 +50,25 @@ class IndecisionApp extends React.Component {
 
   removeOption = (option) => {
     this.__setState({
-      options: this.state.options.filter((el) => el !== option),
+      options: removeOption(this.state.options, option),
     });
   };
 
   removeAllOptions = () => {
-    this.__setState({ options: [] });
+    this.__setState({
+      options: [],
+    });
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.options.length !== this.state.options.length) {
-      localStorage.setItem('options', JSON.stringify(this.state.options));
-    }
+    saveOptions(this.state.options, prevState.options);
   }
 
   componentDidMount() {
-    try {
-      const options = JSON.parse(localStorage.getItem('options'));
+    const options = readOptions();
 
-      if (options) {
-        this.__setState({ options });
-      }
-    } catch (e) {
-      console.log('[APP]', 'Local storage error');
+    if (options) {
+      this.__setState({ options });
     }
   }
 
