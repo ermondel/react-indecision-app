@@ -1,6 +1,6 @@
 {
   "name": "react-indecision-app",
-  "version": "1.7.7",
+  "version": "1.8.8",
   "private": true,
   "homepage": "https://ermondel.github.io/react-indecision-app",
   "description": "A small application to help you make decisions.",
@@ -14,10 +14,10 @@
     "gh-pages": "^3.1.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-modal": "^3.11.2",
-    "react-scripts": "^3.4.3"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-modal": "^3.12.1",
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
