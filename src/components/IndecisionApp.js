@@ -67,7 +67,7 @@ class IndecisionApp extends React.Component {
   componentDidMount() {
     const options = readOptions();
 
-    if (options) {
+    if (options && options.length) {
       this.__setState({ options });
     }
   }

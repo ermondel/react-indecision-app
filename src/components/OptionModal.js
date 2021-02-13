@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-const OptionModal = (props) => (
+const OptionModal = React.memo((props) => (
   <Modal
     isOpen={props.isOpen}
     onRequestClose={props.closeModal}
@@ -15,7 +15,7 @@ const OptionModal = (props) => (
       Ok
     </button>
   </Modal>
-);
+));
 
 Modal.setAppElement('#app');
 

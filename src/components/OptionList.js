@@ -3,7 +3,7 @@ import Option from './Option';
 import OptionAdd from './OptionAdd';
 import OptionsRemoveAll from './OptionsRemoveAll';
 
-const OptionList = (props) => {
+const OptionList = React.memo((props) => {
   const displayList = props.options.length > 0;
 
   const emptyListMessage = (
@@ -33,6 +33,6 @@ const OptionList = (props) => {
       <OptionAdd onSubmit={props.addItem} message={props.resultMessage} />
     </div>
   );
-};
+});
 
 export default OptionList;
