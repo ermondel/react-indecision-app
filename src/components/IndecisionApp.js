@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import ActionBtn from './ActionBtn';
-import OptionList from './OptionList';
-import OptionModal from './OptionModal';
+import CentralButton from './CentralButton';
+import Decisions from './Decisions';
+import DecisionModal from './DecisionModal';
 import {
   randomOption,
   addOption,
@@ -18,8 +17,6 @@ class IndecisionApp extends React.Component {
     modalOpen: false,
     message: '',
   };
-
-  subtitle = 'Put your life in the hands of a computer';
 
   showRandomOption = () => {
     this.__setState({
@@ -48,13 +45,13 @@ class IndecisionApp extends React.Component {
     this.__setState({ modalOpen: false });
   };
 
-  removeOption = (option) => {
+  removeDecision = (option) => {
     this.__setState({
       options: removeOption(this.state.options, option),
     });
   };
 
-  removeAllOptions = () => {
+  removeAllDecisions = () => {
     this.__setState({
       options: [],
     });
@@ -83,26 +80,24 @@ class IndecisionApp extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header subtitle={this.subtitle} />
-
         <main className='main'>
           <div className='action-bar'>
-            <ActionBtn
+            <CentralButton
               disabled={this.state.options.length <= 0}
               onClick={this.showRandomOption}
             />
           </div>
 
-          <OptionList
+          <Decisions
             options={this.state.options}
             addItem={this.addOption}
-            removeItem={this.removeOption}
-            removeAll={this.removeAllOptions}
+            removeItem={this.removeDecision}
+            removeAll={this.removeAllDecisions}
             resultMessage={this.state.message}
           />
         </main>
 
-        <OptionModal
+        <DecisionModal
           closeModal={this.closeModal}
           isOpen={this.state.modalOpen}
           selectedOption={this.state.selectedOption}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-const OptionModal = React.memo((props) => (
+const DecisionModal = React.memo((props) => (
   <Modal
     isOpen={props.isOpen}
     onRequestClose={props.closeModal}
@@ -19,4 +19,4 @@ const OptionModal = React.memo((props) => (
 
 Modal.setAppElement('#app');
 
-export default OptionModal;
+export default DecisionModal;

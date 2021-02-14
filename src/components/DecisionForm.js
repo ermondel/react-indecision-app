@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import OptionAddMessage from './OptionAddMessage';
 
-class OptionAdd extends Component {
+class DecisionForm extends Component {
   state = {
     value: '',
   };
@@ -19,22 +18,24 @@ class OptionAdd extends Component {
 
   render() {
     return (
-      <div className='option-add'>
-        <OptionAddMessage text={this.props.message} />
+      <div className='decisions__add'>
+        {this.props.message ? (
+          <p className='decisions__add__message'>{this.props.message}</p>
+        ) : null}
 
-        <form className='option-add__form' onSubmit={this.onSubmit}>
+        <form className='decisions__add__form' onSubmit={this.onSubmit}>
           <input
-            className='option-add__input'
+            className='decisions__add__input'
             type='text'
             value={this.state.value}
             onChange={this.onChange}
           />
 
-          <button className='option-add__submit-btn'>Add Option</button>
+          <button className='decisions__add__submit-btn'>Add Option</button>
         </form>
       </div>
     );
   }
 }
 
-export default OptionAdd;
+export default DecisionForm;
