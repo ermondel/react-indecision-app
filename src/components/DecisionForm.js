@@ -1,41 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class DecisionForm extends Component {
-  state = {
-    value: '',
-  };
-
-  onSubmit = (event) => {
+const DecisionForm = React.memo((props) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.state.value.trim());
-    this.setState(() => ({ value: '' }));
+
+    const decision = event.target.decision.value.trim();
+
+    event.target.decision.value = '';
+    event.target.submitbtn.blur();
+
+    if (!decision) {
+      props.addMessage('Enter valid value to add item');
+      return;
+    }
+
+    if (props.checkDecision(decision)) {
+      props.addMessage('This decision already exists');
+      return;
+    }
+
+    props.addDecision(decision);
   };
 
-  onChange = (event) => {
-    const value = event.target.value;
-    this.setState(() => ({ value }));
-  };
+  return (
+    <div className='decisions__add'>
+      {props.message && <p className='decisions__add__message'>{props.message}</p>}
 
-  render() {
-    return (
-      <div className='decisions__add'>
-        {this.props.message ? (
-          <p className='decisions__add__message'>{this.props.message}</p>
-        ) : null}
+      <form className='decisions__add__form' onSubmit={onSubmit}>
+        <input className='decisions__add__input' type='text' name='decision' />
 
-        <form className='decisions__add__form' onSubmit={this.onSubmit}>
-          <input
-            className='decisions__add__input'
-            type='text'
-            value={this.state.value}
-            onChange={this.onChange}
-          />
-
-          <button className='decisions__add__submit-btn'>Add Option</button>
-        </form>
-      </div>
-    );
-  }
-}
+        <button className='decisions__add__submit-btn' name='submitbtn'>
+          Add Option
+        </button>
+      </form>
+    </div>
+  );
+});
 
 export default DecisionForm;

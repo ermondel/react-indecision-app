@@ -3,21 +3,29 @@ import DecisionsRemoveAll from './DecisionsRemoveAll';
 import DecisionList from './DecisionList';
 import DecisionForm from './DecisionForm';
 
-const Decisions = React.memo((props) => (
+const Decisions = (props) => (
   <div className='decisions'>
     <div className='decisions__header'>
       <h3 className='decisions__title'>Your Options</h3>
 
       <DecisionsRemoveAll
-        display={props.options.length > 0}
-        onClick={props.removeAll}
+        display={props.decisions.length > 0}
+        onClick={props.removeAllDecisions}
       />
     </div>
 
-    <DecisionList options={props.options} removeItem={props.removeItem} />
+    <DecisionList
+      decisions={props.decisions}
+      removeDecision={props.removeDecision}
+    />
 
-    <DecisionForm onSubmit={props.addItem} message={props.resultMessage} />
+    <DecisionForm
+      message={props.message}
+      addMessage={props.addMessage}
+      addDecision={props.addDecision}
+      checkDecision={props.checkDecision}
+    />
   </div>
-));
+);
 
 export default Decisions;

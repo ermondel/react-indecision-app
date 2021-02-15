@@ -25,20 +25,16 @@ class IndecisionApp extends React.Component {
     });
   };
 
-  addOption = (option) => {
-    if (!option) {
-      this.__setState({ message: 'Enter valid value to add item' });
-      return;
-    }
+  addDecision = (option) => {
+    this.__setState({ options: addOption(this.state.options, option) });
+  };
 
-    if (this.state.options.indexOf(option) >= 0) {
-      this.__setState({ message: 'This option already exists' });
-      return;
-    }
+  addMessage = (message) => {
+    this.__setState({ message });
+  };
 
-    this.__setState({
-      options: addOption(this.state.options, option),
-    });
+  checkDecision = (decision) => {
+    return this.state.options.indexOf(decision) >= 0 ? true : false;
   };
 
   closeModal = () => {
@@ -46,15 +42,11 @@ class IndecisionApp extends React.Component {
   };
 
   removeDecision = (option) => {
-    this.__setState({
-      options: removeOption(this.state.options, option),
-    });
+    this.__setState({ options: removeOption(this.state.options, option) });
   };
 
   removeAllDecisions = () => {
-    this.__setState({
-      options: [],
-    });
+    this.__setState({ options: [] });
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -89,11 +81,13 @@ class IndecisionApp extends React.Component {
           </div>
 
           <Decisions
-            options={this.state.options}
-            addItem={this.addOption}
-            removeItem={this.removeDecision}
-            removeAll={this.removeAllDecisions}
-            resultMessage={this.state.message}
+            decisions={this.state.options}
+            addDecision={this.addDecision}
+            removeDecision={this.removeDecision}
+            removeAllDecisions={this.removeAllDecisions}
+            message={this.state.message}
+            addMessage={this.addMessage}
+            checkDecision={this.checkDecision}
           />
         </main>
 

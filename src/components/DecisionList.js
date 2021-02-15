@@ -1,8 +1,8 @@
 import React from 'react';
 import DecisionItem from './DecisionItem';
 
-const DecisionList = ({ options, removeItem }) => {
-  if (options.length <= 0) {
+const DecisionList = React.memo(({ decisions, removeDecision }) => {
+  if (decisions.length <= 0) {
     return (
       <p className='decisions__list__message'>
         Please add an option to get started!
@@ -10,9 +10,14 @@ const DecisionList = ({ options, removeItem }) => {
     );
   }
 
-  return options.map((option, index) => (
-    <DecisionItem key={option} value={option} num={index + 1} remove={removeItem} />
+  return decisions.map((option, index) => (
+    <DecisionItem
+      key={option}
+      value={option}
+      num={index + 1}
+      remove={removeDecision}
+    />
   ));
-};
+});
 
 export default DecisionList;

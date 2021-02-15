@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DecisionsRemoveAll = ({ display = true, onClick }) => {
+const DecisionsRemoveAll = React.memo(({ display = true, onClick }) => {
   if (!display) {
     return null;
   }
@@ -10,6 +10,6 @@ const DecisionsRemoveAll = ({ display = true, onClick }) => {
       Remove All
     </button>
   );
-};
+});
 
 export default DecisionsRemoveAll;
