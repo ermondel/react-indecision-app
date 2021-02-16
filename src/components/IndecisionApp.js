@@ -12,21 +12,21 @@ import {
 
 class IndecisionApp extends React.Component {
   state = {
-    options: [],
-    selectedOption: undefined,
+    decisions: [],
+    decision: undefined,
     modalOpen: false,
     message: '',
   };
 
-  showRandomOption = () => {
+  showRandomDecision = () => {
     this.__setState({
-      selectedOption: randomOption(this.state.options),
+      decision: randomOption(this.state.decisions),
       modalOpen: true,
     });
   };
 
-  addDecision = (option) => {
-    this.__setState({ options: addOption(this.state.options, option) });
+  addDecision = (decision) => {
+    this.__setState({ decisions: addOption(this.state.decisions, decision) });
   };
 
   addMessage = (message) => {
@@ -34,30 +34,30 @@ class IndecisionApp extends React.Component {
   };
 
   checkDecision = (decision) => {
-    return this.state.options.indexOf(decision) >= 0 ? true : false;
+    return this.state.decisions.indexOf(decision) >= 0;
   };
 
   closeModal = () => {
     this.__setState({ modalOpen: false });
   };
 
-  removeDecision = (option) => {
-    this.__setState({ options: removeOption(this.state.options, option) });
+  removeDecision = (decision) => {
+    this.__setState({ decisions: removeOption(this.state.decisions, decision) });
   };
 
   removeAllDecisions = () => {
-    this.__setState({ options: [] });
+    this.__setState({ decisions: [] });
   };
 
   componentDidUpdate(prevProps, prevState) {
-    saveOptions(this.state.options, prevState.options);
+    saveOptions(this.state.decisions, prevState.decisions);
   }
 
   componentDidMount() {
-    const options = readOptions();
+    const decisions = readOptions();
 
-    if (options && options.length) {
-      this.__setState({ options });
+    if (decisions && decisions.length) {
+      this.__setState({ decisions });
     }
   }
 
@@ -75,13 +75,13 @@ class IndecisionApp extends React.Component {
         <main className='main'>
           <div className='action-bar'>
             <CentralButton
-              disabled={this.state.options.length <= 0}
-              onClick={this.showRandomOption}
+              disabled={this.state.decisions.length <= 0}
+              onClick={this.showRandomDecision}
             />
           </div>
 
           <Decisions
-            decisions={this.state.options}
+            decisions={this.state.decisions}
             addDecision={this.addDecision}
             removeDecision={this.removeDecision}
             removeAllDecisions={this.removeAllDecisions}
@@ -94,7 +94,7 @@ class IndecisionApp extends React.Component {
         <DecisionModal
           closeModal={this.closeModal}
           isOpen={this.state.modalOpen}
-          selectedOption={this.state.selectedOption}
+          decision={this.state.decision}
         />
       </React.Fragment>
     );

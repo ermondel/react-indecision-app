@@ -10,7 +10,7 @@ const DecisionModal = React.memo((props) => (
     className='modal'
   >
     <h3 className='modal__title'>Selected Option</h3>
-    <p className='modal__body'>{props.selectedOption}</p>
+    <p className='modal__body'>{props.decision}</p>
     <button className='modal__close-btn' onClick={props.closeModal}>
       Ok
     </button>
