@@ -17,3 +17,9 @@
     outline: 1px solid white;
   }
 }
+
+@media (max-width: $desktop-breakpoint) {
+  .action-bar {
+    margin-bottom: 16px;
+  }
+}

@@ -42,8 +42,9 @@
 }
 
 .decisions__value {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 300;
 
   word-break: break-all;
   margin-right: 16px;
@@ -115,4 +116,30 @@
   font-style: italic;
   line-height: 18px;
   margin-bottom: 16px;
+}
+
+@media (max-width: $desktop-breakpoint) {
+  .decisions__add__form {
+    flex-direction: column;
+  }
+
+  .decisions__add__input {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .decisions__item {
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 16px;
+  }
+
+  .decisions__value {
+    margin-right: auto;
+    margin-bottom: 8px;
+  }
+
+  .decisions__remove-btn {
+    margin-left: auto;
+  }
 }
