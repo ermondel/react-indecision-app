@@ -19,6 +19,11 @@ const DecisionForm = React.memo((props) => {
       return;
     }
 
+    if (decision.length > 170) {
+      props.addMessage('The text is too long (max 170 characters)');
+      return;
+    }
+
     props.addDecision(decision);
   };
 
