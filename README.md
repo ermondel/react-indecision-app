@@ -16,6 +16,8 @@ A small application to help you make decisions. Project for Udemy ReactJS course
 
 ### Technologies
 
-- React
-- Sass
-- React Modal
+- [React](https://reactjs.org)
+- [React Modal](https://github.com/reactjs/react-modal)
+- [Sass](https://sass-lang.com)
+- [Webpack](https://webpack.js.org)
+- [Jest](https://jestjs.io)
