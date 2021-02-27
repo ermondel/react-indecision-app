@@ -10,7 +10,7 @@ import {
   readOptions,
 } from '../lib/optionList';
 
-class IndecisionApp extends React.Component {
+class Main extends React.Component {
   state = {
     decisions: [],
     decision: undefined,
@@ -101,4 +101,4 @@ class IndecisionApp extends React.Component {
   }
 }
 
-export default IndecisionApp;
+export default Main;
