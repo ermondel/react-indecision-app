@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> 1`] = `
+Array [
+  <header
+    className="header"
+  >
+    <div
+      className="header__inner"
+    >
+      <h1
+        className="header__title"
+      >
+        Indecision
+      </h1>
+      <h2
+        className="header__subtitle"
+      >
+        Put your life in the hands of a computer
+      </h2>
+    </div>
+  </header>,
+  <main
+    className="main"
+  >
+    <div
+      className="action-bar"
+    >
+      <button
+        className="main-action-btn"
+        disabled={true}
+        onClick={[Function]}
+      >
+        What should I do?
+      </button>
+    </div>
+    <div
+      className="decisions"
+    >
+      <div
+        className="decisions__header"
+      >
+        <h3
+          className="decisions__title"
+        >
+          Your Options
+        </h3>
+      </div>
+      <p
+        className="decisions__list__message"
+      >
+        Please add an option to get started!
+      </p>
+      <div
+        className="decisions__add"
+      >
+        
+        <form
+          className="decisions__add__form"
+          onSubmit={[Function]}
+        >
+          <input
+            className="decisions__add__input"
+            name="decision"
+            type="text"
+          />
+          <button
+            className="decisions__add__submit-btn"
+            name="submitbtn"
+          >
+            Add Option
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>,
+  <footer
+    className="footer"
+  >
+    <span
+      className="footer__sign"
+    >
+      ©
+    </span>
+     
+    <span
+      className="footer__year"
+    >
+      2019 - 2021
+    </span>
+     
+    <a
+      className="footer__link"
+      href="https://github.com/ermondel"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="All rights reserved | created by Serhii (ermondel)"
+    >
+      Serhii
+    </a>
+  </footer>,
+]
+`;
